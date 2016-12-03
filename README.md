@@ -4,7 +4,7 @@ Repository to explore and demonstrate the capabilities and benefits of the [Slim
 
 ## Using this repository
 
-The README.md and commit history are structured to act as an learning aid and reference. 
+The commit history of this repository is intended to act as a learning aid and reference. Individual commits messages describe the 'what' of topics covered and the corresponding code shows the 'how'.
 
 ## Running the code
 
