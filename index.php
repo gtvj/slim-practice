@@ -11,7 +11,8 @@ $app = new \Slim\App(["settings" => $config]);
 
 // Route registration
 $app->get('/', function (Request $request, Response $response) {
-    $response->getBody()->write("Hello");
+    $page = new gtvj\Page();
+    $response->getBody()->write($page->name);
     return $response;
 });
 
