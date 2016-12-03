@@ -23,9 +23,18 @@ $container['view'] = function ($container) {
     return $view;
 };
 
+// Register logging component on container
+$container['logger'] = function($c) {
+    $logger = new \Monolog\Logger('GJ');
+    $console_handler = new \Monolog\Handler\BrowserConsoleHandler();
+    $logger->pushHandler($console_handler);
+    return $logger;
+};
+
 // Render Twig template in route
 $app->get('/', function ($request, $response, $args) {
     $page = new gtvj\Page();
+    $this->logger->addInfo('Monolog lets PHP log to the browser console');
     return $this->view->render($response, 'home.html', [
         'name' => $page->name
     ]);
