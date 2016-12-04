@@ -9,4 +9,4 @@ The commit history of this repository is intended to act as a learning aid and r
 ## Running the code
 
 * Run `composer install` from the project root to install Slim and any other dependencies.
-* Spin up a development server with `php -S localhost:8000` and open the page in a browser
+* Spin up a development server from the project root with `php -S localhost:8000 -t public` (this serves from the 'public' directory) and open the page in a browser

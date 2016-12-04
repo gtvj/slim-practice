@@ -4,8 +4,8 @@
 use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
 
-require 'config.php';
-require 'vendor/autoload.php';
+require __DIR__ . '/../config.php';
+require __DIR__ . '/../vendor/autoload.php';
 
 $app = new \Slim\App(["settings" => $config]);
 
@@ -14,7 +14,7 @@ $container = $app->getContainer();
 
 // Register view component on container
 $container['view'] = function ($container) {
-    $view = new \Slim\Views\Twig('templates', ['cache' => false]);
+    $view = new \Slim\Views\Twig('../templates', ['cache' => false]);
 
     // Instantiate and add Slim specific extension
     $basePath = rtrim(str_ireplace('index.php', '', $container['request']->getUri()->getBasePath()), '/');
