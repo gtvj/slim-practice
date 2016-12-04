@@ -4,10 +4,11 @@
 use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
 
-require __DIR__ . '/../config.php';
 require __DIR__ . '/../vendor/autoload.php';
 
-$app = new \Slim\App(["settings" => $config]);
+$settings = require __DIR__ . '/../settings.php';
+
+$app = new \Slim\App($settings);
 
 // Create a Dependency Injection Container
 $container = $app->getContainer();
